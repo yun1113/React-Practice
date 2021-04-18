@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useSelector } from 'react-redux';
 import { 
   Button, 
   Checkbox, 
@@ -14,6 +14,8 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
+
+import { login } from '../actions'
 
 
 const useStyles = makeStyles({
@@ -59,6 +61,7 @@ const useStyles = makeStyles({
     '&:disabled': {
       background: '#F84868',
       opacity: '0.2',
+      color: 'white',
     },
   },
   textInput: {
@@ -116,6 +119,7 @@ export default function LogIn() {
     return
     // dispatch(login(values.email, values.password));
   }
+  const email = useSelector((state) => state.email);
 
   return (
     <Grid container className={classes.root}>
@@ -127,6 +131,7 @@ export default function LogIn() {
           </Typography>
           <Typography className={classes.subtitle} component="h5" variant="h5">
             Something important Something important Something important Something important 
+            <div>{email}</div>
           </Typography>
         </div>
       </Grid> 
