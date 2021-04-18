@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { 
   Button, 
   Checkbox, 
@@ -118,7 +118,6 @@ export default function LogIn() {
   const submitForm = () => {
     dispatch(login(values.email, values.password));
   }
-  const email = useSelector((state) => state.email);
 
   return (
     <Grid container className={classes.root}>
@@ -130,7 +129,6 @@ export default function LogIn() {
           </Typography>
           <Typography className={classes.subtitle} component="h5" variant="h5">
             Something important Something important Something important Something important 
-            <div>{email}</div>
           </Typography>
         </div>
       </Grid> 
