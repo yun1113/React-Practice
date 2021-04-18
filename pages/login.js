@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { 
   Button, 
   Checkbox, 
@@ -94,7 +94,7 @@ const useStyles = makeStyles({
 
 export default function LogIn() {
   const classes = useStyles();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [values, setValues] = React.useState({
     email: '',
     password: '',
@@ -116,8 +116,7 @@ export default function LogIn() {
   };
   
   const submitForm = () => {
-    return
-    // dispatch(login(values.email, values.password));
+    dispatch(login(values.email, values.password));
   }
   const email = useSelector((state) => state.email);
 

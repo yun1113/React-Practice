@@ -1,7 +1,7 @@
 import { actionTypes } from './actions'
 
 const initState = {
-  email: 'jessi@gmail.com'
+  email: null
 }
 
 function reducer(state = initState, action) {
